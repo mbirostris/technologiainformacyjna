@@ -77,6 +77,10 @@ while True:
 
 ##############################################################a
 #rozwiazanie równania kwadratowego
+a = input('Podaj a')
+b = input('Podaj b')
+c = input('Podaj c')
+
 
 
 
