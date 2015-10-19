@@ -28,8 +28,42 @@ def zadanie1v1():
         suma += a;
         print('Suma liczb = ', suma)
 
-zadanie1v1();
+#zadanie1v1();
 
-#
+def zadanie1v2():
+    suma = 0; liczba_wprowadzen = 0;
+    while True:
+        liczba = input('Podaj liczbe, ujemna konczy: ')
+        a = float(liczba);
+        if a < 0:
+            break;
+        suma += a;
+        liczba_wprowadzen+=1;
+        print('Suma liczb = ', suma)
+    print('Liczba wprowadzonych liczb: ', liczba_wprowadzen)
+
+#zadanie1v2();
+
+#lista.append(a);
+def zadanie1v3():
+    lista = []
+    suma = 0;
+    while True:
+        liczba = input('Podaj liczbe, ujemna konczy: ')
+        a = float(liczba);
+        if a < 0:
+            break;
+        lista.append(a);
+        suma += a;
+    dlugosc = len(lista)
+    srednia = suma/dlugosc;
+    print('Liczba wprowadzonych liczb: ', dlugosc, '; Srednia liczb: ' ,srednia)
+
+
+for i in range(1,11):
+    print(i)
+
+
+
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
