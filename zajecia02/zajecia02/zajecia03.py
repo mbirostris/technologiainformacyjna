@@ -59,11 +59,12 @@ def zadanie1v3():
     srednia = suma/dlugosc;
     print('Liczba wprowadzonych liczb: ', dlugosc, '; Srednia liczb: ' ,srednia)
 
+def sumaliczb010():
+    suma = 0;
+    for i in range(1,11):
+        suma += i;
+    print(suma)
 
-for i in range(1,11):
-    print(i)
-
-
-
+sumaliczb010();
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
