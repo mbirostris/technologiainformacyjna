@@ -17,6 +17,18 @@ def wheelcirkumference(radius):
 
 #Zadania z http://brain.fuw.edu.pl/edu/index.php/TI/P%C4%99tle
 
+#Zadanie: sumator liczb dodatnich wersja 1
+def zadanie1v1():
+    suma = 0;
+    while True:
+        liczba = input('Podaj liczbe, ujemna konczy: ')
+        a = float(liczba);
+        if a < 0:
+            break;
+        suma += a;
+        print('Suma liczb = ', suma)
+
+zadanie1v1();
 
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
