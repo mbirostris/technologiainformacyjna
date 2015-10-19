@@ -59,12 +59,23 @@ def zadanie1v3():
     srednia = suma/dlugosc;
     print('Liczba wprowadzonych liczb: ', dlugosc, '; Srednia liczb: ' ,srednia)
 
-def sumaliczb010():
+#Napisz dwa programy, które obliczają sumę liczb całkowitych od 1 do 10. W pierwszym wykorzystaj pętlę while, a w drugim pętlę for. 
+def sumaliczb010(n):
     suma = 0;
-    for i in range(1,11):
+    for i in range(1,n+1):
         suma += i;
     print(suma)
 
-sumaliczb010();
+#sumaliczb010(3000);
+
+#Napisz program który pyta użytkownika o liczbę, a następnie oblicza silnię tej liczby. Wykorzystaj pętlę for.
+def liczysilnie(n):
+    suma = 1;
+    for i in range(1,n+1):
+        suma *= i;
+    print(suma)
+
+liczysilnie(4)
+
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
