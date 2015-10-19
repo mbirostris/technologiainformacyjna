@@ -42,7 +42,23 @@ def zadanie1v2():
         print('Suma liczb = ', suma)
     print('Liczba wprowadzonych liczb: ', liczba_wprowadzen)
 
-zadanie1v2();
+#zadanie1v2();
 
+#lista.append(a);
+def zadanie1v3():
+    lista = []
+    suma = 0;
+    while True:
+        liczba = input('Podaj liczbe, ujemna konczy: ')
+        a = float(liczba);
+        if a < 0:
+            break;
+        lista.append(a);
+        suma += a;
+    dlugosc = len(lista)
+    srednia = suma/dlugosc;
+    print('Liczba wprowadzonych liczb: ', dlugosc, '; Srednia liczb: ' ,srednia)
+
+zadanie1v3();
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
