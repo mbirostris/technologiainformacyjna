@@ -75,7 +75,25 @@ def liczysilnie(n):
         suma *= i;
     print(suma)
 
-liczysilnie(4)
+#liczysilnie(4)
 
+#Oblicz sumę sześcianów liczb naturalnych od 0 do 100.
+def sumaszescianow(n):
+    suma = 0;
+    for i in range(0,n+1):
+        suma += i**3;
+    print(suma)
 
+#sumaszescianow(2);
+#Napisz program który sprawdzi, sześciany ilu liczb naturalnych (od 0) trzeba zsumować, by uzyskać liczbę większą niż 10^6.
+def mniejniz0():
+    suma = 0; i=0;
+    while True:
+        suma += i**3;
+        i+=1;
+        if suma > 1e6:
+            break;
+    output = 'Liczba: %d; Suma: %d ' % (i, suma)
+    print(output)
+mniejniz0();
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
