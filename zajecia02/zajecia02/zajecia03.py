@@ -28,7 +28,21 @@ def zadanie1v1():
         suma += a;
         print('Suma liczb = ', suma)
 
-zadanie1v1();
+#zadanie1v1();
+
+def zadanie1v2():
+    suma = 0; liczba_wprowadzen = 0;
+    while True:
+        liczba = input('Podaj liczbe, ujemna konczy: ')
+        a = float(liczba);
+        if a < 0:
+            break;
+        suma += a;
+        liczba_wprowadzen+=1;
+        print('Suma liczb = ', suma)
+    print('Liczba wprowadzonych liczb: ', liczba_wprowadzen)
+
+zadanie1v2();
 
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
