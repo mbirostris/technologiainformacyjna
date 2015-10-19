@@ -23,6 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="zajecia03.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="zajecia01.py">
       <SubType>Code</SubType>
     </Compile>
