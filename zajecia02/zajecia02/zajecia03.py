@@ -30,5 +30,6 @@ def zadanie1v1():
 
 zadanie1v1();
 
+#
 
 #Zadania z http://www.ling.gu.se/~lager/python_exercises.html
