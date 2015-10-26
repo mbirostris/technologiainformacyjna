@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8f8a4800-d88b-442e-b8ba-c65b945936a6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>zajecia03.py</StartupFile>
+    <StartupFile>test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="mojefunkcje.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zajecia04.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="zajecia03.py">
       <SubType>Code</SubType>
     </Compile>
