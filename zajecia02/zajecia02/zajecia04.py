@@ -24,9 +24,14 @@ def zadanie1v3():
 def wynikdzielenia(a,b):
     return float(a)/b;
 
-print(wynikdzielenia(1,2))
-
+#print(wynikdzielenia(1,2))
+from math import pow
 #4. Obliczaj?c? i zwracaj?c? pierwiastek zadanego stopnia ? w li?cie parametr?w podajemy liczb? podpierwiastkow? i stopie? pierwiastka, domy?lnie niech wynosi on dwa.
+def pierwiastekstopnian(a,r):
+    return pow(a,1/r)
+
+print(pierwiastekstopnian(16,4))
+
 #5. Wypisuj?c? r?wnanie prostej przechodz?cej przez wsp??rz?dne dw?ch zadanych punkt?w.
 #6. Wypisuj?c? jedno lub dwa rozwi?zania r?wnania kwadratowego a x^2+b x +c = 0, lub informuj?c?, ?e nie ma rozwi?za? rzeczywistych. Parametrami funkcji niech b?d? a, b, c ? wsp??czynniki r?wnania kwadratowego.
 #7. Zwracaj?c? silni? argumentu. Zadanie prosz? rozwi?za? na dwa sposoby ? raz z u?yciem p?tli, a drugi raz rekurencyjnie.
