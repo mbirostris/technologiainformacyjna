@@ -43,14 +43,22 @@ strlineeq(2,2,0,0)
 #7. Zwracaj?c? silni? argumentu. Zadanie prosz? rozwi?za? na dwa sposoby ? raz z u?yciem p?tli, a drugi raz rekurencyjnie.
 
 def liczysilniev2(n):
-    result = 0
     if n > 0:
         return n*liczysilniev2(n-1);
     else:
         return 1;
-        
+print(liczysilniev2(4))
 
 #8. Wypisuj?c? ??dan? liczb? wyraz?w ci?gu Fibbonacciego. (F_0=0, F_1=1, F_n=F_{n-1}+F_{n-2})
+def fibonnacci(n):
+    if n == 0:
+        return 0;
+    elif n == 1:
+        return 1;
+    else:
+        return fibonnacci(n-1)+fibonnacci(n-2) 
+
+
 #9. S?u??c? do obliczania n-tego elementu ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
 #10. S?u??c? do obliczania n-tego elementu ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
 #11. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
