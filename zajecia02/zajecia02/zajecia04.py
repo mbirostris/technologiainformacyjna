@@ -58,7 +58,7 @@ def fibonnacci(n):
     else:
         return fibonnacci(n-1)+fibonnacci(n-2) 
 
-print(fibonnacci(24))
+#print(fibonnacci(24))
 
 #9. S?u??c? do obliczania n-tego elementu ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
 
@@ -70,10 +70,31 @@ def elementarytmy(n, n0, d):
 
 #10. S?u??c? do obliczania n-tego elementu ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
 #11. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
+
+def sumaarytm(n, n0, d, p = False):
+    result = 0;
+    for i in range(n):
+        result += elementarytmy(i, n0, d)
+        if p:
+            print(result)
+    return result;
+#print(sumaarytm(10,0,1, True))
+
 #12. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
 #13. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu 1/n^m, gdzie n i m s? parametrami. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
 #14. Funkcj? obliczaj?c? d?ugo?? wektora jedno-, dwu- lub tr?jwymiarowego.
+from math import sqrt
+
+def vlen(a, b=0, c=0):
+    return sqrt(a**2 + b**2 + c**2)
+
+#print(vlen(4,3, 1))
+
 # opt. 15. Funkcj?, kt?ra zwr?ci napis b?d?cy reprezentacj? podanej liczby ca?kowitej. T? ?konwersj? na napis? wykonaj cyfra po cyfrze.
+print('zajecia04', __name__)
+import module1
+module1.mojafunkcja()
+
 
 
 #sito Eratostenesa
