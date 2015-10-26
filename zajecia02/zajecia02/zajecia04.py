@@ -78,7 +78,7 @@ def sumaarytm(n, n0, d, p = False):
         if p:
             print(result)
     return result;
-#print(sumaarytm(10,0,1, True))
+print(sumaarytm(3,1,2, True))
 
 #12. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
 #13. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu 1/n^m, gdzie n i m s? parametrami. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
@@ -91,10 +91,25 @@ def vlen(a, b=0, c=0):
 #print(vlen(4,3, 1))
 
 # opt. 15. Funkcj?, kt?ra zwr?ci napis b?d?cy reprezentacj? podanej liczby ca?kowitej. T? ?konwersj? na napis? wykonaj cyfra po cyfrze.
-print('zajecia04', __name__)
-import module1
-module1.mojafunkcja()
-
-
+#print('zajecia04', __name__)
+#import module1
+#module1.mojafunkcja()
 
 #sito Eratostenesa
+
+def sitko(n):
+    lista = list(range(2,n));
+    for i in range(2,n):
+        j = i+i;
+        while j < n:
+            if lista.count(j):
+                lista.remove(j)
+            j+=i
+    print(lista);
+
+sitko(60)
+
+
+
+
+
