@@ -14,13 +14,18 @@ def zadanie1v3():
     srednia = suma/dlugosc;
     print('Liczba wprowadzonych liczb: ', dlugosc, '; Srednia liczb: ' ,srednia)
 
-zadanie1v3()
+#zadanie1v3()
  
 
 #Prosz? napisa? funkcj?, kt?ra:
-#1. Kt?ra wypisuje sum? dw?ch argument?w.
+#1. Kt?ra wypisuje sum? dw?ch argument?w.`
 #2. Kt?ra zwraca sum? dw?ch argument?w.
 #3. Wypisuj?c? wynik dzielenia zmiennoprzecinkowego dla dw?ch dowolnych argument?w b?d?cych liczbami.
+def wynikdzielenia(a,b):
+    return float(a)/b;
+
+print(wynikdzielenia(1,2))
+
 #4. Obliczaj?c? i zwracaj?c? pierwiastek zadanego stopnia ? w li?cie parametr?w podajemy liczb? podpierwiastkow? i stopie? pierwiastka, domy?lnie niech wynosi on dwa.
 #5. Wypisuj?c? r?wnanie prostej przechodz?cej przez wsp??rz?dne dw?ch zadanych punkt?w.
 #6. Wypisuj?c? jedno lub dwa rozwi?zania r?wnania kwadratowego a x^2+b x +c = 0, lub informuj?c?, ?e nie ma rozwi?za? rzeczywistych. Parametrami funkcji niech b?d? a, b, c ? wsp??czynniki r?wnania kwadratowego.
