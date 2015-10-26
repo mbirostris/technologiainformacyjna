@@ -41,6 +41,15 @@ strlineeq(2,2,0,0)
 
 #6. Wypisuj?c? jedno lub dwa rozwi?zania r?wnania kwadratowego a x^2+b x +c = 0, lub informuj?c?, ?e nie ma rozwi?za? rzeczywistych. Parametrami funkcji niech b?d? a, b, c ? wsp??czynniki r?wnania kwadratowego.
 #7. Zwracaj?c? silni? argumentu. Zadanie prosz? rozwi?za? na dwa sposoby ? raz z u?yciem p?tli, a drugi raz rekurencyjnie.
+
+def liczysilniev2(n):
+    result = 0
+    if n > 0:
+        return n*liczysilniev2(n-1);
+    else:
+        return 1;
+        
+
 #8. Wypisuj?c? ??dan? liczb? wyraz?w ci?gu Fibbonacciego. (F_0=0, F_1=1, F_n=F_{n-1}+F_{n-2})
 #9. S?u??c? do obliczania n-tego elementu ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
 #10. S?u??c? do obliczania n-tego elementu ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
