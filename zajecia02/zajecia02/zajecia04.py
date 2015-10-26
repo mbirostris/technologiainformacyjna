@@ -37,7 +37,7 @@ def pierwiastekstopnian(a,r=2):
 def strlineeq(x1,y1,x2,y2):
     print('y = ', (y1-y2)/(x1-x2), 'x + ', y1-x1*((y1-y2)/(x1-x2)) )
 
-strlineeq(2,2,0,0)
+#strlineeq(2,2,0,0)
 
 #6. Wypisuj?c? jedno lub dwa rozwi?zania r?wnania kwadratowego a x^2+b x +c = 0, lub informuj?c?, ?e nie ma rozwi?za? rzeczywistych. Parametrami funkcji niech b?d? a, b, c ? wsp??czynniki r?wnania kwadratowego.
 #7. Zwracaj?c? silni? argumentu. Zadanie prosz? rozwi?za? na dwa sposoby ? raz z u?yciem p?tli, a drugi raz rekurencyjnie.
@@ -47,7 +47,7 @@ def liczysilniev2(n):
         return n*liczysilniev2(n-1);
     else:
         return 1;
-print(liczysilniev2(4))
+#print(liczysilniev2(4))
 
 #8. Wypisuj?c? ??dan? liczb? wyraz?w ci?gu Fibbonacciego. (F_0=0, F_1=1, F_n=F_{n-1}+F_{n-2})
 def fibonnacci(n):
@@ -58,8 +58,16 @@ def fibonnacci(n):
     else:
         return fibonnacci(n-1)+fibonnacci(n-2) 
 
+print(fibonnacci(24))
 
 #9. S?u??c? do obliczania n-tego elementu ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
+
+def elementarytmy(n, n0, d):
+     ele = n0;
+     for i in range(n):
+         ele += d
+     return ele
+
 #10. S?u??c? do obliczania n-tego elementu ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (element?w ci?gu od pierwszego do przedostatniego obliczonego).
 #11. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu arytmetycznego o zadanym wyrazie pocz?tkowym i r??nicy. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
 #12. S?u??c? do obliczania n-tej sumy cz??ciowej ci?gu geometrycznego o zadanym wyrazie pocz?tkowym i ilorazie. Funkcja powinna dawa? mo?liwo?? wypisywania wynik?w po?rednich (kolejno obliczanych element?w ci?gu i sum).
