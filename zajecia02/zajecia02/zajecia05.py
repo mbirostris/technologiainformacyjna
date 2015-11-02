@@ -12,18 +12,18 @@ def readfoofilev1():
 #python pozwala na iterowanie po opiektach w p?tli:
 def readfoofilev2(name):
     for line in open(name):
-        #print(line, end='')
-        print(line)
+        print(line, end="")
+        #print(line)
 
 #readfoofilev2("foo.txt");
 
 #Aby zapisa? co? do pliku mo?emy sko?ysta? z nasepuj?cej konstrukcji:
 def pisaniedopliku():
-    #f = open("out","a") # Open file for writing (appending)
-    f = open("out","w") # Open file for overwriting
+    f = open("out","a") # Open file for writing (appending)
+    #f = open("out","w") # Open file for overwriting
     year = 1901
     while year <= 2015:
-        print("%3d " % (year),file=f)
+        #print("%3d " % (year),file=f)
         f.write("%3d\n" % year)
         year += 1
     f.close()
@@ -31,7 +31,7 @@ def pisaniedopliku():
 
 #Przy okazji: formatowanie stringów: 
 #https://docs.python.org/2/library/stdtypes.html#string-formatting-operations
-# np: print("%3d %0.2f" % (year,principal))
+#np: print("%3d %0.2f" % (year,principal))
 
 #Stringi a la listy:
 def stringialalisty():
@@ -43,6 +43,14 @@ def stringialalisty():
     print(' a: ', a, ';\n b: ', b, ';\n c: ', c,' ;\n d: ', d,' ;\n e: ', e)
 
 #stringialalisty()
+
+def histogram(a):
+    for i in a:
+        st1 = ''
+        for j in range(0,int(i)):
+            st1 +='*';
+        print(st1)
+#histogram([11,4,90,4,5,7])
 
 # List vs. tuple vs. set vs. dictionaty
 def listvsrest():
@@ -68,12 +76,12 @@ import sys
 print(sys.argv[0], sys.argv[1])
 
 #samodzielne ?wiczenie: wygeneruj tabelk? w excelu z liczbami od 1 do 1000.
-#przekopuj j? do pliku tekstowego i i potem wczytaj do do lisry 
+#przekopuj j? do pliku tekstowego i i potem wczytaj do do listy 
 #w pythonie. napisz funkcj?
 #znajduj?c? najwi?ksz? liczb?, sum? cyfr i ?redni? liczb.
 #nazw? pliku podaj jako argument do skryptu i przeka? do funkcji
 #wskazówka: # Convert all of the input values from strings to floats
-#fvalues = [float(line) for line in lines]
+fvalues = [float(line) for line in lines]
 
 #tuple
 '''
@@ -212,4 +220,4 @@ def countdown(n):
 #print(c.__next__())
 
 
-http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python
+#http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python
