@@ -1,4 +1,4 @@
-#Czytanie plików, funkcja open():
+ï»¿#Czytanie plikï¿½w, funkcja open():
 
 def readfoofilev1():
     f = open("foo.txt") # Returns a file object
@@ -29,7 +29,7 @@ def pisaniedopliku():
     f.close()
 #pisaniedopliku()
 
-#Przy okazji: formatowanie stringów: 
+#Przy okazji: formatowanie stringï¿½w: 
 #https://docs.python.org/2/library/stdtypes.html#string-formatting-operations
 #np: print("%3d %0.2f" % (year,principal))
 
@@ -71,17 +71,19 @@ def odwolaniadoelementu():
     print( a[1], '\n', a[3][2] , '\n', a[3][3][1])
 #odwolaniadoelementu()
 
-#Korzystanie z argumentów do skryptu:
+#Korzystanie z argumentï¿½w do skryptu:
 import sys
-print(sys.argv[0], sys.argv[1])
+#print(sys.argv[0], sys.argv[1])
 
 #samodzielne ?wiczenie: wygeneruj tabelk? w excelu z liczbami od 1 do 1000.
 #przekopuj j? do pliku tekstowego i i potem wczytaj do do listy 
 #w pythonie. napisz funkcj?
 #znajduj?c? najwi?ksz? liczb?, sum? cyfr i ?redni? liczb.
 #nazw? pliku podaj jako argument do skryptu i przeka? do funkcji
-#wskazówka: # Convert all of the input values from strings to floats
-fvalues = [float(line) for line in lines]
+#wskazï¿½wka: # Convert all of the input values from strings to floats
+#fvalues = [float(line) for line in lines]
+
+
 
 #tuple
 '''
@@ -130,7 +132,7 @@ for line in open(filename):
     stock = (name,shares,price) # Create a tuple (name, shares, price)
     portfolio.append(stock) # Append to list of records
 '''
-#cwiczenie:Zgadnij co zwróci print(portfolio[0]). Utwórz plik 
+#cwiczenie:Zgadnij co zwrï¿½ci print(portfolio[0]). Utwï¿½rz plik 
 #"portfolio.csv" z dwiema linijkami w podanym formacie i 
 #zobacz czy odpowiedzia?a(e)s dobrze.
 #zbior czyli set:
@@ -146,10 +148,10 @@ for line in open(filename):
 #>>> t
 #set(['H', 'e', 'l', 'o'])
 #Sets support a standard collection of operations, including union, intersection, differ-
-#ence, and symmetric difference. Here’s an example:
+#ence, and symmetric difference. Hereï¿½s an example:
 #a = t | s # Union of t and s
 #b = t & s # Intersection of t and s
-#c = t – s # Set difference (items in t, but not in s)
+#c = t ï¿½ s # Set difference (items in t, but not in s)
 #d = t ^ s # Symmetric difference (items in t or s, but not both)
 #New items can be added to a set using  add() or update() :
 #t.add('x') # Add a single item
@@ -176,7 +178,7 @@ for line in open(filename):
 #cannot be used as keys because their contents can change.
 #A dictionary is a useful way to define an object that consists of named fields as
 #shown previously. However, dictionaries are also used as a container for performing fast
-#lookups on unordered data. For example, here’s a dictionary of stock prices:
+#lookups on unordered data. For example, hereï¿½s a dictionary of stock prices:
 #prices = {
 #"GOOG" : 490.10,
 #"AAPL" : 123.50,
@@ -212,12 +214,12 @@ def countdown(n):
         yield n # Generate a value (n)
         n -= 1
 
-#c = countdown(5)
-#print(c.__next__())
-#print(c.__next__())
-#print(c.__next__())
-#print(c.__next__())
-#print(c.__next__())
+c = countdown(5)
+print(c.__next__())
+print(c.__next__())
+print(c.__next__())
+print(c.__next__())
+print(c.__next__())
 
 
 #http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python
