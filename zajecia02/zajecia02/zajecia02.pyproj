@@ -5,7 +5,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8f8a4800-d88b-442e-b8ba-c65b945936a6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>zajecia05.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -14,7 +15,8 @@
     <RootNamespace>zajecia02</RootNamespace>
     <IsWindowsApplication>False</IsWindowsApplication>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>foo.txt</CommandLineArguments>
+    <CommandLineArguments>
+    </CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -27,9 +29,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="module1.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="zajecia06.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="mojefunkcje.py">
