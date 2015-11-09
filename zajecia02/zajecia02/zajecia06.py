@@ -146,19 +146,63 @@ def lfmapkwv1():
 def lfmapkwv2():
     return map(lambda x : x**2, filter(lambda x: x%2==0, range(1,100)))
 
-print((lfmapkwv1()))
+#print((lfmapkwv1()))
 
 #http://brain.fuw.edu.pl/edu/index.php/TI/Numpy
 #http://brain.fuw.edu.pl/edu/index.php/TI/Operacje_na_macierzach
+import numpy as np
+
 
 #Napisz funkcj? obliczaj?c? ?lad macierzy. 
+
+A = np.array([[1, 2, 3],
+             [4, 5, 6],
+             [7, 8, 9]])
+
+#print(np.matrix(A))
+#print(A)
+
+def sladmacierzy(A):
+    a,b = np.shape(A)
+    tr = 0;
+    for i in range(0,a):
+        tr += A[i][i]
+    return tr;
+
+#print(sladmacierzy(A))
+#print(np.trace(A))
 
 
 #Napisz funkcj? transponuj?c? macierz kwadratow? w miejscu, czyli bez tworzenia nowej macierzy, poprzez zamian? elementów parami. 
 
 
+def macierzodwrotna(A):
+    print(A)
+    a,b = np.shape(A)
+    i = 0;
+    while i < int(a/2 + 1):
+        for j in range(0,b):
+            A[i][j], A[j][i] = A[j][i], A[i][j]
+        i+=1;
+    print(A)
+#macierzodwrotna(A)
+
+
 #Napisz funkcj? która zwróci transponowan? macierz, niekoniecznie kwadratow?.
 #U?yj funkcji numpy.empty do stworzenia macierzy wynikowej, a nast?pnie wype?nij ja w p?tli. 
+
+def macierzodwrotnav2(A):
+    print(A)
+    a,b = np.shape(A)
+    B = np.empty([a, b])
+    for i in range(0,a):
+        for j in range(0,b):
+            B[i][j] = A[j][i]
+    print(B)
+
+
+macierzodwrotnav2(A)
+#print(np.transpose(A))
 
 
 
