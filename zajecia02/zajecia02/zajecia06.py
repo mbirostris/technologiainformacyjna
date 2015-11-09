@@ -20,7 +20,7 @@ def slowv2():
         d[i] = sin(i)
     return d;
 
-slowv2()
+#slowv2()
 #Zrób co wy?ej, ale niech funkcja wy?wietla tylko warto?ci (bez kluczy). Wsk: u?yj keys() lub items()
 
 def slowv3():
@@ -50,7 +50,7 @@ def slowv6():
     for (k,v) in d.items():	
         print(k)
 
-slowv6()
+#slowv6()
 
 
 #Zdefiniuj funkcj? generuj?c? list? warto?ci b?d?cych kwadratami liczb od 1 do 20 (w??cznie)
@@ -65,23 +65,52 @@ def listav1():
 def listav2():
     li=list()
     for i in range(1,21):
-        li.append(i**2)
+        li.append(i)
     return li
 
-print(listav1())
-print(listav2())
+#print(listav1())
+#print(listav2())
 #Korzystaj?c z poprzedniego rozwi?zania napisz funkcj?, która zwraca pierwszych 5 elementów listy z powy?szego zadania.
 
+def printlistav1(a):
+    print(a[:5])
+
+#printlistav1(listav2())
 
 #Powtórz powy?sze zadanie dla ostatnich 5 warto?ci:
 
+def printlistav2(a):
+    print(a[-5:])
+
+#printlistav2(listav2())
 
 
 #Zdefiniuj funkcj? generuj?c? tuple której warto?ciami s? liczy od 1 do 20:
 
+def printTuple():
+    li=list()
+    for i in range(1,21):
+        li.append(i**2)
+    return tuple(li)
+
+#print(printTuple())
 
 #Napiz program generuj?cu i wy?witlaj?cy tupl?, której warto?ciami s? liczby parzyste od 1 do 20
 
+def printTupleeven():
+    li=list()
+    for i in range(1,21):
+        if i%2 == 0:
+            li.append(i)
+    return tuple(li)
+
+def printTupleevenv2():
+    li=list()
+    for i in range(2,21,2):
+        li.append(i)
+    return tuple(li)
+
+#print(printTupleeven())
 
 
 #Napisz funkcj?, która filtruje liczby parzyste z listy. Skorzystaj z funkcji wbudowanej filter() i funkcji lambda.
@@ -90,11 +119,34 @@ print(listav2())
 #https://docs.python.org/3.0/whatsnew/3.0.html
 #http://www.secnetix.de/olli/Python/list_comprehensions.hawk
 
+def flparzv3():
+    li = listav2()
+    return filter(lambda x : x%2==0, li )
 
+def flparzv1():
+    li = [1,2,3,4,5,6,7,8,9,10]
+    evenNumbers = filter(lambda x: x%2==0, li)
+    return evenNumbers;
+#lub
+def flparzv2():
+    return filter(lambda x: x%2==0, range(1,21))
 
-#Napisz funkcj? korzystaj?c? z funkji budowanej map() i zrwacjaca list? elementów b?d?cych kwadratami liczb od 1 do 99:
+#print(flparzv1()) #python3 zwraca iteratory
+#print(flparzv2()) #python3 zwraca iteratory
+#print(list(flparzv1())) 
+#print([i for i in flparzv2()])
 
+#Napisz funkcj? korzystaj?c? z funkji budowanej map() i zrwacjaca list? elementów b?d?cych kwadratami parzystych liczb od 1 do 99:
+def lll(x):
+    return x**2
 
+def lfmapkwv1():
+    return map(lll, filter(lambda x: x%2==0, range(1,100)))
+
+def lfmapkwv2():
+    return map(lambda x : x**2, filter(lambda x: x%2==0, range(1,100)))
+
+print((lfmapkwv1()))
 
 #http://brain.fuw.edu.pl/edu/index.php/TI/Numpy
 #http://brain.fuw.edu.pl/edu/index.php/TI/Operacje_na_macierzach
