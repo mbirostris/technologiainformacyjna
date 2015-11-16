@@ -72,12 +72,28 @@ def EvenGenerator(n):
             yield i
         i+=1
 
-n = int(input('Podaj cyferkę: '))
+'''
+#n = int(input('Podaj cyferkę: '))
 lista = []
 for i in EvenGenerator(n):
     lista.append(str(i))
 
-print(','.join(lista))
+#print(','.join(lista))
+'''
+'''
+n = int(input('Podaj cyferkę: '))
+for i in EvenGenerator(n):
+    print(i, end=',')
+'''
+def EvenGeneratorv1(n):
+    i=0
+    while i<=n:
+        yield i
+        i+=2
+
+n = int(input('Podaj cyferkę: '))
+for i in EvenGeneratorv1(n):
+    print(i, end=',')
 
 #Powtórz powyższe zadanie, ale wyświetl liczby podzielna przez 5 i 7 i skorzystaj tym razem z pętli for
 
