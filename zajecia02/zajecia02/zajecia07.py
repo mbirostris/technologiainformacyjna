@@ -3,12 +3,43 @@
 
 #Zdefinij funkcję, która akceptuje dwa ciągi znaków i wyświetla ciąg o największej długości. Jeśli ciągi znaków są równe funkcja powinna wyświetlić oba.
 
-		
+def printValue(s1, s2):
+    len1 = len(s1); len2 = len(s2);
+    if len1 > len2:
+        print(s1)
+    elif len1 < len2:
+        print(s2)
+    else:
+#        print(s1,s2)
+        print(s1)
+        print(s2)
 
+#printValue("mama","tata")
 
+import re
 #NApisz funkcję czytającą z stdin adres mailowy w formie 'username@companyname.com'. Niech funkcja wyświelna następnie nazwę użytkownika (username)
 #Wsk: #https://docs.python.org/2/library/re.html
 
+def readmail():
+    pat1 = "(\w+)@((\w+\.)+(com))"
+    pat2 = "(\w+)@((\w+\.)+\w+)"
+    while True:
+        emailAddress = input('Podaj nazwę email: ')
+        if not emailAddress:
+            break;
+        r2 = re.match(pat1,emailAddress)
+        if r2:
+            print(r2.group(1))
+            continue;
+        r3 = re.match(pat2,emailAddress)
+        if r3:
+            print(r3.group(1))
+            continue;
+        print("Zły format!")
+
+
+        
+readmail()
 
 #Napisz to samo co wyżej, ale powinno zwracać nazwę maila (np: gmail.com)
 
