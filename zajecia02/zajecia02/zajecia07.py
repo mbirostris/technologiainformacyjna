@@ -25,7 +25,6 @@
 #Wygeneruj listę 1000  randomowych liczb typu float w przedziale od 5 do 95 i zapisz do pliku rand.txt Wsk: https://docs.python.org/2/library/random.html
 
 
-#http://brain.fuw.edu.pl/edu/index.php/TI/Operacje_na_macierzach: rozwiąż zadania z mnożeniem i transpozycją macierzy
 
 
 #http://brain.fuw.edu.pl/edu/index.php/TI/Matplotlib
@@ -34,3 +33,4 @@
 ''' Napisz program na znajdowanie najdłuższych linii względnie wyrazów w zawartości pliku.
 '''
 
+#http://brain.fuw.edu.pl/edu/index.php/TI/Operacje_na_macierzach: rozwiąż zadania z mnożeniem i transpozycją macierzy
