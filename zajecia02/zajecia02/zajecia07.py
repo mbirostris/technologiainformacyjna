@@ -39,12 +39,45 @@ def readmail():
 
 
         
-readmail()
+#readmail()
 
 #Napisz to samo co wyżej, ale powinno zwracać nazwę maila (np: gmail.com)
 
+def readmailv2():
+    pat1 = "(\w+)@((\w+\.)+(com))"
+    pat2 = "(\w+)@((\w+\.)+\w+)"
+    while True:
+        emailAddress = input('Podaj nazwę email: ')
+        if not emailAddress:
+            break;
+        r2 = re.match(pat1,emailAddress)
+        if r2:
+            print(r2.group(2))
+            continue;
+        r3 = re.match(pat2,emailAddress)
+        if r3:
+            print(r3.group(2))
+            continue;
+        print("Zły format!")
+
+#readmailv2();
+
+
 #Wykorzystując słowo kluczowe yield napisz generator liczb parzystych od 0 do n, oddzielanych przecinkami dla liczby n czytanej z stdin. Wykorzystaj pętlę while. Np. Dla wpisanego 6 wyświetli "0,2,3,6". Wsk: https://docs.python.org/3/library/stdtypes.html#str.join
 
+def EvenGenerator(n):
+    i=0
+    while i<=n:
+        if i%2==0:
+            yield i
+        i+=1
+
+n = int(input('Podaj cyferkę: '))
+lista = []
+for i in EvenGenerator(n):
+    lista.append(str(i))
+
+print(','.join(lista))
 
 #Powtórz powyższe zadanie, ale wyświetl liczby podzielna przez 5 i 7 i skorzystaj tym razem z pętli for
 
