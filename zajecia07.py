@@ -90,25 +90,45 @@ def EvenGeneratorv1(n):
     while i<=n:
         yield i
         i+=2
-
+'''
 n = int(input('Podaj cyferkę: '))
 for i in EvenGeneratorv1(n):
     print(i, end=',')
-
+'''
 #Powtórz powyższe zadanie, ale wyświetl liczby podzielna przez 5 i 7 i skorzystaj tym razem z pętli for
 
-
+def EvenGeneratorv3(n):
+    for i in range(0,n+1):
+        if i%5==0 and i%7==0:
+            yield i
+'''
+n = int(input('Podaj cyferkę: '))
+for i in EvenGeneratorv3(n):
+    print(i, end=',')
+'''
 #napisz program, który akceptuje proste wyrażenie matematyczne i wyświetla wynik na stdout. Wsk: https://docs.python.org/2/library/functions.html#eval
 
-
+#n = input("Podaj wyrazenie: "); print(eval(n))
 
 #Wygeneruj listę 1000  randomowych liczb typu float w przedziale od 5 do 95 i zapisz do pliku rand.txt Wsk: https://docs.python.org/2/library/random.html
 
+import random 
+def napisdopliku():
+    f = open('rand.txt', 'w')
+    for i in xrange(0,1000):
+        f.write(str(random.random()*90+5)+'\n' )
+    f.close();
 
-
-
+napisdopliku()
 #http://brain.fuw.edu.pl/edu/index.php/TI/Matplotlib
 
+'''
+import pylab as pl
+x = pl.arange(0.0, 2.0, 0.01)
+y = pl.sin(2.0*pl.pi*x)
+pl.plot(x,y)
+pl.show()
+'''
 
 ''' Napisz program na znajdowanie najdłuższych linii względnie wyrazów w zawartości pliku.
 '''
