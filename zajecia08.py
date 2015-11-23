@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-
 #Rozwiązania kolokwium
 
-#Zadanie 1
-'''
-#rozwiazanie 1:
+#################################################
+#                 Zadanie 1
+#################################################
+#Zadanie 1 - 1 sposob
 def solve(numheads,numlegs):
     ns='No solutions!'
     for i in range(numheads+1):
@@ -18,8 +18,8 @@ numlegs=94
 solutions=solve(numheads,numlegs)
 print(solutions)
 
-
-#rozwiązanie 2:
+################################################
+#Zadanie 1 - 2 sposob
 def liczbakrolikow(glowy, nogi):
     return int((nogi-2*glowy)/2)
 
@@ -27,12 +27,12 @@ def liczbakur(glowy, nogi):
     return int(glowy-liczbakrolikow(glowy, nogi));
 
 print(liczbakur(35, 94), liczbakrolikow(35, 94))
-'''
 
-#Zadanie 2
-'''
+#################################################
+#                 Zadanie 2
+#################################################
 a = [  
-        [' ']*7,
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
         [' ']*7,
         [' ']*7,
         [' ']*7,
@@ -42,14 +42,7 @@ a = [
         ['1','2','3','4','5','6','7'],
 ]
 
-def printa():
-    for i in range(0,8):
-        for j in range(0,7):
-            print(a[i][j], end='')
-        print()
-
-#lub lepiej
-def printav2(a):
+def printav1(a):
     for row in a:
         for cell in row:
             print(cell, end='')
@@ -67,16 +60,20 @@ def wypelnija(b, xo):
 
 xx = 'x'; oo = 'o'
 while True:
-    printav2(a);
+    printav1(a);
     b = int(input('Podaj kolumne: '))
-    if wypelnija(b-1, xx):
-        printav2(a);
+    if b >0 and b < 8:
+        if wypelnija(b-1, xx):
+            printav1(a);
+        else:
+            break;
+        xx, oo = oo, xx
     else:
-        break;
-    xx, oo = oo, xx
+        print('Zły zakres wartości, podaj liczbę od 1 do 7!')
 print("Koniec")
-'''
-#Zadanie 3
+#################################################
+#                 Zadanie 3
+#################################################
 i = 0;
 output = open('plik.xml', 'w')
 for text in open('pacPat_t0sc0sg0.xml', 'r'):
