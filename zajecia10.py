@@ -24,6 +24,11 @@ D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
 
 #Wygeneruj 10x10 elementową macierz Gaussowską 2D z zakresie -1,1.  
 #(wsk: http://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html)
+X, Y = np.meshgrid(np.linspace(-1,1,10), np.linspace(-1,1,10))
+D = np.sqrt(X*X+Y*Y)
+sigma, mu = 1.0, 0.0
+G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
+#print(G)
 
 #Korzystając z pakietu matplotlib  narysuj punkty z poprzedniego zadania: 
 #a) korzystając z funkcji contour
