@@ -3,145 +3,37 @@ import numpy as np
 import matplotlib.pyplot as plt
 #Zad Uwórz macierz 10x2 losowych liczb. Niech macierz to reprezentuje zbior punktów w układzie kartezjańskim; przekonwertuj te punkty do układu biegunowego.
 
-Z = np.random.random((10,2))
-X,Y = Z[:,0], Z[:,1]
-R = np.sqrt(X**2+Y**2)
-T = np.arctan2(Y,X)
-#print(R)
-#print(T)
 
 #Zad. Dla macierzy z powyższego zadania znajdź odległości między punktami (w ukł. kartezjańskim).
 #Wsk: http://docs.scipy.org/doc/numpy/reference/generated/numpy.atleast_2d.html
-D = np.sqrt( (X-np.roll(X,1))**2 + (Y-np.roll(Y,1))**2)
-#print(D)
 
 #mazierz 10x10 z odleglosciamy dla kazdej kombnacji pk.
-X,Y = np.atleast_2d(Z[:,0]), np.atleast_2d(Z[:,1])
-D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
-#print(D)
 
-# Much faster with scipy
-import scipy.spatial
-D = scipy.spatial.distance.cdist(Z,Z)
-#print(D)
 
 
 #Wygeneruj 10x10 elementową macierz Gaussowską 2D z zakresie -1,1.  
 #(wsk: http://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html)
-X, Y = np.meshgrid(np.linspace(-1,1,10), np.linspace(-1,1,10))
-D = np.sqrt(X*X+Y*Y)
-sigma, mu = 1.0, 0.0
-G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
-#print(G)
 
 #Korzystając z pakietu matplotlib  narysuj punkty z poprzedniego zadania: 
 #a) korzystając z funkcji contour
 #b) korzystając z imshow
 #c) korzystając z plot_surface
 
-h = plt.contourf(X,Y,G)
-plt.show()
-
-plt.imshow(G)
-plt.show()
-
-from mpl_toolkits.mplot3d import Axes3D
-
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, G, rstride=1, cstride=1, color='0.8', alpha=0.85, linewidth=1)  
-plt.show()
 
 #Powtórz poprzednie zadanie dla większej liczby punktów, np. 10000. 
 
 #Powtórz poprzednie zadanie dla funkcji sinus(X+Y) i tan(X+Y) (zamiast f.  gaussa)
 
-X, Y = np.meshgrid(np.linspace(-1.5,1.5,100), np.linspace(-1.5,1.5,100))
-D = np.sqrt(X*X+Y*Y)
-#G = np.sin(X+Y)
-G = np.tan(X+Y)
-#print(G)
-
-
-h = plt.contourf(X,Y,G)
-plt.show()
-
-plt.imshow(G)
-plt.show()
-
 from mpl_toolkits.mplot3d import Axes3D
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, G, rstride=1, cstride=1, color='0.8', alpha=0.85, linewidth=1)  
-plt.show()
+
+# Dla wesji plot_surface()  podpisz osie, zmień kolor i styl punktów na siatce.
 
 #------------------------------------
 
 #Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a fill value when necessary)
-Z = np.random.randint(0,10,(10,10))
-shape = (5,5)
-fill  = 0
-position = (1,1)
-
-R = np.ones(shape, dtype=Z.dtype)*fill
-P  = np.array(list(position)).astype(int)
-Rs = np.array(list(R.shape)).astype(int)
-Zs = np.array(list(Z.shape)).astype(int)
-
-R_start = np.zeros((len(shape),)).astype(int)
-R_stop  = np.array(list(shape)).astype(int)
-Z_start = (P-Rs//2)
-Z_stop  = (P+Rs//2)+Rs%2
-
-R_start = (R_start - np.minimum(Z_start,0)).tolist()
-Z_start = (np.maximum(Z_start,0)).tolist()
-R_stop = np.maximum(R_start, (R_stop - np.maximum(Z_stop-Zs,0))).tolist()
-Z_stop = (np.minimum(Z_stop,Zs)).tolist()
-
-r = [slice(start,stop) for start,stop in zip(R_start,R_stop)]
-z = [slice(start,stop) for start,stop in zip(Z_start,Z_stop)]
-R[r] = Z[z]
-print(Z)
-print(R)
-
 
 #How to implement the Game of Life using numpy arrays ? 
-def iterate(Z):
-    # Count neighbours
-    N = (Z[0:-2,0:-2] + Z[0:-2,1:-1] + Z[0:-2,2:] +
-         Z[1:-1,0:-2]                + Z[1:-1,2:] +
-         Z[2:  ,0:-2] + Z[2:  ,1:-1] + Z[2:  ,2:])
-
-    # Apply rules
-    birth = (N==3) & (Z[1:-1,1:-1]==0)
-    survive = ((N==2) | (N==3)) & (Z[1:-1,1:-1]==1)
-    Z[...] = 0
-    Z[1:-1,1:-1][birth | survive] = 1
-    return Z
-
-Z = np.random.randint(0,2,(50,50))
-for i in range(100): Z = iterate(Z)
 
 #Given an arbitrary number of vectors, build the cartesian product (every combinations of every item)
-def cartesian(arrays):
-    arrays = [np.asarray(a) for a in arrays]
-    shape = (len(x) for x in arrays)
-    ix = np.indices(shape, dtype=int)
-    ix = ix.reshape(len(arrays), -1).T
-    for n, arr in enumerate(arrays):
-        ix[:, n] = arrays[n][ix[:, n]]
-    return ix
-print (cartesian(([1, 2, 3], [4, 5], [6, 7])))
 
-
-nx, ny = (3, 3)
-x = np.linspace(0, 1, nx)
-y = np.linspace(0, 1, ny)
-xv, yv = np.meshgrid(x, y)
-print(x,y,xv, yv)
-
-x = np.arange(-5, 5, 0.1)
-y = np.arange(-5, 5, 0.1)
-xx, yy = np.meshgrid(x, y, sparse=True)
-z = np.sin(xx**2 + yy**2) / (xx**2 + yy**2)
