@@ -1,14 +1,25 @@
+
 # -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
 #Zad Uwórz macierz 10x2 losowych liczb. Niech macierz to reprezentuje zbior punktów w układzie kartezjańskim; przekonwertuj te punkty do układu biegunowego.
 
+Z = np.random.random((10,2))
+X,Y = Z[:,0], Z[:,1]
+R = np.sqrt(X**2+Y**2)
+T = np.arctan2(Y,X)
+#print(R)
+#print(T)
 
 #Zad. Dla macierzy z powyższego zadania znajdź odległości między punktami (w ukł. kartezjańskim).
 #Wsk: http://docs.scipy.org/doc/numpy/reference/generated/numpy.atleast_2d.html
+D = np.sqrt( (X-np.roll(X,1))**2 + (Y-np.roll(Y,1))**2)
+#print(D)
 
 #mazierz 10x10 z odleglosciamy dla kazdej kombnacji pk.
-
+X,Y = np.atleast_2d(Z[:,0]), np.atleast_2d(Z[:,1])
+D = np.sqrt( (X-X.T)**2 + (Y-Y.T)**2)
+#print(D)
 
 
 #Wygeneruj 10x10 elementową macierz Gaussowską 2D z zakresie -1,1.  
