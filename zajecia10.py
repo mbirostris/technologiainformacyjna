@@ -36,7 +36,7 @@ G = np.exp(-( (D-mu)**2 / ( 2.0 * sigma**2 ) ) )
 #c) korzystając z plot_surface
 
 h = plt.contourf(X,Y,G)
-plt.show()
+#plt.show()
 
 plt.imshow(G)
 #plt.show()
@@ -62,7 +62,7 @@ G = np.tan(X+Y)
 h = plt.contourf(X,Y,G)
 #plt.show()
 
-plt.imshow(G)
+#plt.imshow(G)
 #plt.show()
 
 from mpl_toolkits.mplot3d import Axes3D
@@ -73,28 +73,31 @@ line = ax.plot_surface(X, Y, G, rstride=1, cstride=1, color='r', alpha=0.15, lin
 ax.set_xlabel(r'$\beta$')
 ax.set_ylabel('Y Label')
 ax.set_zlabel('Z Label')
-plt.show()
+#plt.show()
 
 
 # Dla wesji plot_surface()  podpisz osie, zmień kolor i styl punktów na siatce.
 
 #------------------------------------
-
+'''
 #Consider an arbitrary array, write a function that extract a subpart with a fixed shape and centered on a given element (pad with a fill value when necessary)
 Z = np.random.randint(0,10,(10,10))
-shape = (5,5)
+print(Z)
+shape = (2,5)
 fill  = 0
-position = (1,1)
+position = (2,6)
 
 R = np.ones(shape, dtype=Z.dtype)*fill
 P  = np.array(list(position)).astype(int)
 Rs = np.array(list(R.shape)).astype(int)
 Zs = np.array(list(Z.shape)).astype(int)
+print(P, Rs, Zs, Rs)
 
 R_start = np.zeros((len(shape),)).astype(int)
 R_stop  = np.array(list(shape)).astype(int)
 Z_start = (P-Rs//2)
 Z_stop  = (P+Rs//2)+Rs%2
+print(R_start, R_stop, Z_start, Z_stop)
 
 R_start = (R_start - np.minimum(Z_start,0)).tolist()
 Z_start = (np.maximum(Z_start,0)).tolist()
@@ -107,6 +110,13 @@ R[r] = Z[z]
 #print(Z)
 #print(R)
 
+####################
+R = Z
+Zy = list(range(0, position[0] - int(shape[0]/2)))+ list(range( position[0] + int(shape[0]/2) + shape[0]%2, Z.shape[0] ))
+Zx = list(range(0, position[1] - int(shape[1]/2)))+ list(range( position[1] + int(shape[1]/2) + shape[1]%2, Z.shape[1] ))
+R = np.delete(R, Zx, axis=1); R = np.delete(R, Zy, axis=0)
+#print(R)
+'''
 
 #How to implement the Game of Life using numpy arrays ? 
 def iterate(Z):
@@ -117,25 +127,34 @@ def iterate(Z):
     print('\n', "AA\n", N)
     # Apply rules
     birth = (N==3) & (Z[1:-1,1:-1]==0)
+    print('\n\n',Z[1:-1,1:-1])
     survive = ((N==2) | (N==3)) & (Z[1:-1,1:-1]==1)
-    Z[...] = 0
-    print('\n', "BB\n", Z, "\n birth", birth | survive)
+    Z[...] = 0 # to samo co Z[:,:] = 0, lub = Z = np.zeros(Z.shape[0], Z.shape[1]) czyli, że wszystko ma być zero: '...' = wszystko.
+    print('\n', "BB\n", Z, "\n birth", birth, '\n\n\n' ,survive)
     Z[1:-1,1:-1][birth | survive] = 1
     return Z
 
 Z = np.random.randint(0,2,(25,25))
-for i in range(100):
+for i in range(1):
     print(Z)
     Z = iterate(Z)
 
+'''
 #Given an arbitrary number of vectors, build the cartesian product (every combinations of every item)
+#http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.asarray.html
+#http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.indices.html
 def cartesian(arrays):
     arrays = [np.asarray(a) for a in arrays]
     shape = (len(x) for x in arrays)
+    print(arrays)
+    print((shape))
     ix = np.indices(shape, dtype=int)
+    print(ix)
     ix = ix.reshape(len(arrays), -1).T
+    print(ix)
     for n, arr in enumerate(arrays):
         ix[:, n] = arrays[n][ix[:, n]]
     return ix
-print (cartesian(([1, 2, 3], [4, 5], [6, 7])))
-
+print ([1, 2, 3], [4, 5], [6, 7],cartesian(([1, 2, 3], [4, 5], [6, 7])))
+print(np.indices((3,2), dtype=int))
+'''
