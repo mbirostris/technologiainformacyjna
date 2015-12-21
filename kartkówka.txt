@@ -1,0 +1,2 @@
+Plik plik.csv zawiera 3 kolumny opowiedające punktom (x,y,z) pewnego rozkładu (atraktora Lorenza). Narysuj ten rozkład. Podpisz osie, zatytułuj rysunek i zmień kolor lini na zielony.
+Wsk: git commit https://github.com/mbirostris/technologiainformacyjna.git

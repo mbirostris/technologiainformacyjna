@@ -6,7 +6,6 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-'''
 #http://matplotlib.org/api/patches_api.html
 #http://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure.gca
 
@@ -60,7 +59,13 @@ class Kolo(object):
 a = Kolo(30);
 fig = a.draw();
 plt.show()
-'''
+b = Kwadrat(2)
+fig1 = b.draw();
+plt.show()
+
+
+
+
 '''
 import matplotlib as mpl
 from mpl_toolkits.mplot3d import Axes3D
