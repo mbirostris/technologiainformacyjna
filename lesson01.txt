@@ -1,0 +1,47 @@
+* sprawy organizacyjne: obecność obowiązkowa, kryteria zaliczenia, itd.
+	http://haar.zfb.fuw.edu.pl/edu/index.php/%22Technologia_informacyjna%22
+	http://brain.fuw.edu.pl/edu/index.php/%22Programowanie_z_Pythonem%22
+	
+* można używać własnych komputerów
+* zamiana termiu zajęć
+* os, program, jak zainstalować
+	linux: 
+		apt-cache, yum search
+	windows:
+		https://www.python.org/
+		https://www.continuum.io/downloads
+		https://www.enthought.com/  i  potem products + getconopy
+
+* brak ikonki => python jako program uruchamiany w terminalu (windows + linux)
+	Python 2 i 3 (niestety trzeba wspomnieć, bo na pracowni są oba i nie raz przez pomyłkę wywołają 2)
+	pokazać, zrobić print() i podzielić 5/2 (pokazać kropkę) w python2 i python3
+	ćwiczenie: niech otworzą pythona i wypiszą swoje imię i nazwisko
+* zmienna jako nazwa dla wartości (liczby)
+* uruchomić ipython (porównać ze zwykłym pythonem) i pokazać, że działają komeny 
+	rachunki na liczbach, 4 działania & dzielenie całkowite & reszta z dzielenia & potęgowanie 
+	1e10, 1e-10
+	(pokazać, że da się generować całkiem duże liczby i operować na nich efektywnie)
+* nie zapisuje się co zrołem w poprzedniej sesji => potrzebne skrypty wykonywalne
+* plik.py + komenda "$python + plik.py" = "programik". Pokazać tylko w linuksie, pokazać edytory tekst;
+	ćwiczenie: niech zrobią plik i go puszczą
+* plik jako skrypt wykonywalny: 
+	$ chmod +x myscript.py
+	#! /usr/bin/env python
+	#!/usr/local/bin/python  - mi nie działa, trzeba wiedzieć gdzie leży python
+* jakby tak zrobić edytor tekstu z komendą python w środku => IDE 
+		=> spyder + visual studio(dla mnie) i wiele innych => https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
+	debuger
+* korzystanie z help(), znów na przykładzie print()
+* moduły i korzystanie z np: dir(os)
+* komentarze
+* napis jako typ danych i rzutowanie: string(), int(), long(), float() (dodać stringi i liczby, potem zrzutować)
+	Ćwiczenie: niech coś zrzutują i potem wykomentują
+* arraye
+* funkcje wbudowane: https://docs.python.org/2/library/functions.html (na pamieć na za 2 zajęcia)
+	Ćwiczenie: niech wybiorą jedną funkcję (nie rzutowanie) i jej użyją, niech nie kopiją przykładów ze stony
+* instrukcja warunkowa (if.. else) z prostym warunkiem (==), odróżnianie == od =, wcięcie
+* funkcja input() jako sposób by program nie operował wyłącznie na stałych
+	
+Ćwiczeni końcowe: niech zrobią skryt i input i niech będzie użycie if else
+
+

@@ -114,7 +114,6 @@ def spines():
     plt.savefig('spines.png')
     #plt.show()
 
-
 spines();
 
 #http://matplotlib.org/users/gridspec.html
